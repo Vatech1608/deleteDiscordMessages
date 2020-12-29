@@ -227,7 +227,7 @@
             if (!resp.ok) {
                 // searching messages too fast
                 if (resp.status === 429) {
-                    const w = (await resp.json()).retry_after;
+                    const w = 4000;
                     throttledCount++;
                     throttledTotalTime += w;
                     searchDelay += w; // increase delay
