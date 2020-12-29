@@ -2,7 +2,7 @@
 
 (function () {
     let stop;
-    let popup;
+    let popup
     popup = window.open('', '', `top=0,left=${screen.width-800},width=850,height=${screen.height}`);
     if(!popup || !popup.document || !popup.document.write) return console.error('Popup blocked! Please allow popups and try again.');
     popup.document.write(/*html*/`<!DOCTYPE html>
@@ -234,8 +234,8 @@
                     log.warn(`Being rate limited by the API for ${w}ms! Increasing search delay...`);
                     printDelayStats();
                     //Better result
-                    log.verb(`Cooling down for ${w * 1}ms before retrying...`);
-                    await wait(w*1);
+                    log.verb(`Cooling down for ${w * 4}ms before retrying...`);
+                    await wait(w*4);
                     return await recurse();
                 } else {
                     return log.error(`Error searching messages, API responded with status ${resp.status}!\n`, await resp.json());
