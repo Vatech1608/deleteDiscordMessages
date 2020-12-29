@@ -227,10 +227,7 @@
             if (!resp.ok) {
                 // searching messages too fast
                 if (resp.status === 429) {
-                    const w = 4000;
-                    throttledCount++;
-                    throttledTotalTime += w;
-                    searchDelay += w; // increase delay
+                    const w = 3000;
                     log.warn(`Being rate limited by the API for ${w}ms! Increasing search delay...`);
                     printDelayStats();
                     //Better result
