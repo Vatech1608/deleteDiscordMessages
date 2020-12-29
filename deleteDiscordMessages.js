@@ -47,7 +47,6 @@
         <label><input id="autoScroll" type="checkbox" checked>Auto scroll</label>
         <label title="Hide sensitive information for taking screenshots"><input id="redact" type="checkbox">Screenshot mode</label>
         <progress id="progress" style="display:none;"></progress>
-
     </div>
     <pre style="margin-top:200px;font-size:0.75rem;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;">
         <center>Star this project on <a href="https://github.com/victornpb/deleteDiscordMessages" target="_blank">github.com/victornpb/deleteDiscordMessages</a>!\n\n
@@ -297,7 +296,7 @@
                         // deleting messages too fast
                         if (resp.status === 429) {
                             //Better result
-                            const w = 2500;
+                            const w = 2000;
                             log.verb(`Cooling down for ${w}ms before retrying...`);
                             await wait(w);
                             i--; // retry
